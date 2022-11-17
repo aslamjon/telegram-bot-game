@@ -1,0 +1,27 @@
+{
+  "name": "telegram-bot-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aslamjon/telegram-bot-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aslamjon/telegram-bot-game/issues"
+  },
+  "homepage": "https://github.com/aslamjon/telegram-bot-game#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.60.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
