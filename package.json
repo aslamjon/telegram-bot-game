@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "start": "dots-env -c node src/index.js",
+    "dev": "dots-env -c nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/aslamjon/telegram-bot-game#readme",
   "dependencies": {
+    "dots-env": "^1.1.8",
     "node-telegram-bot-api": "^0.60.0"
   },
   "devDependencies": {
