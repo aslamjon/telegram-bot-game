@@ -48,7 +48,11 @@ const start = () => {
 
   bot.on("contact", (msg) => {
     const chatId = msg.chat.id;
-    return bot.sendMessage(chatId, `Thank you ${msg.contact.first_name} with phone ${msg.contact.phone_number}!`);
+    const userId = msg.contact.user_id;
+    console.log(chatId, userId);
+    if (chatId !== userId)
+      return bot.sendMessage(chatId, `${msg.from.first_name} Iltimos o'zingizni telefon raqamingizni tashlang`);
+    return bot.sendMessage(chatId, `Thank you ${msg.from.first_name} with phone ${msg.contact.phone_number}!`);
     // return bot.sendMessage(chatId, `Thank you ${msg.contact.first_name} with phone ${msg.contact.phone_number}!`, locationOption);
   });
 
@@ -74,6 +78,16 @@ const start = () => {
       delete chats[chatId];
       return bot.sendMessage(chatId, `🤦Afsuski noto'g'ri soni tanladingiz, ${chats[chatId]}`, againOptions);
     }
+  });
+
+  // SHOW ERROR
+  bot.on("polling_error", (error) => {
+    console.log(error.code); // => 'EFATAL'
+  });
+
+  // SHOW WEBHOOK ERROR
+  bot.on("webhook_error", (error) => {
+    console.log(error.code); // => 'EPARSE'
   });
 };
 
